@@ -7,6 +7,10 @@ public class CalculadoraDescontoTDD {
         if (valorTotalItens > 1000) {
             return valorTotalItens * 0.80;
         }
+
+        if (valorTotalItens > 500) {
+            return valorTotalItens * 0.90; // 10% de desconto
+        }
         return valorTotalItens;
     }
 }

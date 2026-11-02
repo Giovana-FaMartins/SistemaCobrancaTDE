@@ -22,4 +22,12 @@ class CalculadoraDescontoTDDTest {
         // Regra: R$ 1500 com 20% de desconto deve resultar em R$ 1200
         assertEquals(1200.0, calc.calcularValorFinal(1500.0, false), 0.01);
     }
+
+    @Test
+    void deveAplicar10PorcentoDeDescontoParaComprasEntre500E1000() {
+        CalculadoraDescontoTDD calc = new CalculadoraDescontoTDD();
+
+        // Regra: R$ 800 com 10% de desconto deve resultar em R$ 720
+        assertEquals(720.0, calc.calcularValorFinal(800.0, false), 0.01);
+    }
 }
