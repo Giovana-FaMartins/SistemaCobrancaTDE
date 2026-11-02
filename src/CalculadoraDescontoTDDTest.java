@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CalculadoraDescontoTDDTest {
@@ -11,5 +13,13 @@ class CalculadoraDescontoTDDTest {
         assertThrows(IllegalArgumentException.class, () -> {
             calc.calcularValorFinal(0, false);
         });
+    }
+
+    @Test
+    void deveAplicar20PorcentoDeDescontoParaComprasAcimaDe1000() {
+        CalculadoraDescontoTDD calc = new CalculadoraDescontoTDD();
+
+        // Regra: R$ 1500 com 20% de desconto deve resultar em R$ 1200
+        assertEquals(1200.0, calc.calcularValorFinal(1500.0, false), 0.01);
     }
 }
